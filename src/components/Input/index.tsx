@@ -6,7 +6,11 @@ import {
 
 interface InputProps {
   text: string
+  name: 'email' | 'password'
   type: React.HTMLInputTypeAttribute
+  register: UseFormRegister<FormData>
+  validation: { required: boolean }
+  message: string
 }
 
 export const Input = ({ text, type }: InputProps) => {
