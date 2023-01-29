@@ -20,6 +20,11 @@
     ],
     "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-misused-promises": [2, {
+            "checksVoidReturn": {
+              "attributes": false
+            }
+          }]
     }
 }
