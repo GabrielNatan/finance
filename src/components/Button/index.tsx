@@ -4,11 +4,12 @@ import {
 
 interface ButtonProps {
   text: string
+  type: 'button' | 'submit' | 'reset' | undefined
 }
 
-export const Button = ({ text }: ButtonProps) => {
+export const Button = ({ text, type }: ButtonProps) => {
   return (
-        <Container>
+        <Container type={type}>
             {text}
         </Container>
   )
