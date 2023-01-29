@@ -4,6 +4,7 @@ import { GlobalStyle } from './style/globalStyle'
 import { darkTheme, lightTheme } from './style/theme'
 import { Home } from './pages/Home'
 import { useTheme } from './hooks/useTheme'
+import { Login } from './pages/Login'
 
 function App () {
   const { isDarkTheme } = useTheme()
@@ -13,6 +14,7 @@ function App () {
       <GlobalStyle/>
       <BrowserRouter>
         <Routes>
+          <Route path="/login" element={<Login/>}/>
           <Route path="/" element={<Home/>}/>
         </Routes>
       </BrowserRouter>
