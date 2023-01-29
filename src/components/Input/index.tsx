@@ -6,13 +6,16 @@ import {
 
 interface InputProps {
   text: string
+  type: React.HTMLInputTypeAttribute
 }
 
-export const Input = ({ text }: InputProps) => {
+export const Input = ({ text, type }: InputProps) => {
   return (
         <Container>
             <Text>{text}</Text>
-            <InputText type="text"/>
+            <InputText
+                type={type}
+            />
         </Container>
   )
 }
