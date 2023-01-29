@@ -1,20 +1,20 @@
-import  { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
-interface themeProps{
-    color:string;
-    background:string;
-    backgroundSecondary:string;
-    borderColor:string;
-    shadowColor:string;
-    buttonPrimary:string;
-    active:string;
-    green:string;
-    green30:string;
-    red:string;
-    red30:string;
+interface themeProps {
+  color: string
+  background: string
+  backgroundSecondary: string
+  borderColor: string
+  shadowColor: string
+  buttonPrimary: string
+  active: string
+  green: string
+  green30: string
+  red: string
+  red30: string
 }
 
-export const GlobalStyle = createGlobalStyle<{theme:themeProps}>`
+export const GlobalStyle = createGlobalStyle<{ theme: themeProps }>`
 
     *{
         margin: 0;
