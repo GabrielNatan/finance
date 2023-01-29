@@ -9,7 +9,8 @@ export const lightTheme = {
   green: '#00B086',
   green30: '#00B0864D',
   red: '#FF1B1B',
-  red30: '#FF1B1B4D'
+  red30: '#FF1B1B4D',
+  white: '#FFFFFF'
 }
 
 export const darkTheme = {
@@ -23,5 +24,6 @@ export const darkTheme = {
   green: '#00B086',
   green30: '#00B0864D',
   red: '#FF1B1B',
-  red30: '#FF1B1B4D'
+  red30: '#FF1B1B4D',
+  white: '#FFFFFF'
 }
