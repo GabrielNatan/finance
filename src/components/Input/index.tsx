@@ -1,7 +1,11 @@
+import { type UseFormRegister } from 'react-hook-form'
+import { type FormData } from '../../interface'
+
 import {
   Container,
   InputText,
-  Text
+  Text,
+  MessageError
 } from './style'
 
 interface InputProps {
@@ -13,13 +17,17 @@ interface InputProps {
   message: string
 }
 
-export const Input = ({ text, type }: InputProps) => {
+export const Input = ({ text, type, name, register, validation, message }: InputProps) => {
   return (
         <Container>
             <Text>{text}</Text>
             <InputText
+                {...register(name, validation)}
                 type={type}
+                name={name}
+                message={message !== ''}
             />
+            <MessageError>{message}</MessageError>
         </Container>
   )
 }
