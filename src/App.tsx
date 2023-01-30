@@ -6,21 +6,24 @@ import { Home } from './pages/Home'
 import { useTheme } from './hooks/useTheme'
 import { Login } from './pages/Login'
 import { PrivateRoutes } from './utils/PrivateRoutes'
+import { AuthProvider } from './context/AuthContext'
 
 function App () {
   const { isDarkTheme } = useTheme()
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} >
-      <GlobalStyle/>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<PrivateRoutes/>}>
-            <Route path="/" element={<Home/>}/>
-          </Route>
-          <Route path="/login" element={<Login/>}/>
-        </Routes>
-      </BrowserRouter>
+      <AuthProvider>
+        <GlobalStyle/>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<PrivateRoutes/>}>
+              <Route path="/" element={<Home/>}/>
+            </Route>
+            <Route path="/login" element={<Login/>}/>
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </ThemeProvider>
   )
 }
