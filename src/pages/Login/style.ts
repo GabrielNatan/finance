@@ -9,14 +9,20 @@ export const Container = styled.div`
 `
 
 export const Form = styled.form`
-    width: 530px;
-    padding: 40px;
+    width: 100%;
+    max-width: 530px;
+    padding: 45px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    box-shadow: 0px 0px 4px ${({ theme }) => theme.shadowColor};
-    background-color: ${({ theme }) => theme.backgroundSecondary};
+    
+    @media screen and (min-width: 768px){
+        width: 530px;
+        padding: 40px;    
+        box-shadow: 0px 0px 4px ${({ theme }) => theme.shadowColor};
+        background-color: ${({ theme }) => theme.backgroundSecondary};
+    }
 `
 
 export const Title = styled.h1`
