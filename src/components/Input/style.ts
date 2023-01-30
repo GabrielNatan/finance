@@ -16,6 +16,7 @@ export const InputText = styled.input<InputTextProps>`
     border-radius: 10px;
     border: 1px solid ${({ theme }) => theme.borderColor};
     border-color: ${({ theme, message }) => message ? theme.red : theme.borderColor};
+    outline-color: ${({ theme, message }) => message ? theme.red : theme.borderColor};
     background-color: ${({ theme }) => theme.backgroundSecondary};
     &:-webkit-autofill {
         -webkit-box-shadow: 0px 0px 0px 30px ${({ theme }) => theme.backgroundSecondary} inset;
@@ -29,4 +30,5 @@ export const Text = styled.label`
 
 export const MessageError = styled.div`
     color: ${({ theme }) => theme.red};
+    font-size: 14px;
 `
