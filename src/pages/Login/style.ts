@@ -16,6 +16,7 @@ export const Form = styled.form`
     flex-direction: column;
     gap: 15px;
     box-shadow: 0px 0px 4px ${({ theme }) => theme.shadowColor};
+    background-color: ${({ theme }) => theme.backgroundSecondary};
 `
 
 export const Title = styled.h1`
