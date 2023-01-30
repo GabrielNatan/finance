@@ -23,4 +23,8 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeProps }>`
         box-sizing: border-box;
     }
 
+    body{
+      background-color: ${({ theme }) => theme.background};
+    }
+
 `
