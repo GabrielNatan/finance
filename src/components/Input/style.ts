@@ -16,6 +16,12 @@ export const InputText = styled.input<InputTextProps>`
     border-radius: 10px;
     border: 1px solid ${({ theme }) => theme.borderColor};
     border-color: ${({ theme, message }) => message ? theme.red : theme.borderColor};
+    background-color: ${({ theme }) => theme.backgroundSecondary};
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0px 0px 0px 30px ${({ theme }) => theme.backgroundSecondary} inset;
+        -webkit-text-fill-color: ${({ theme }) => theme.color} !important;
+    }
+
 `
 export const Text = styled.label`
 
