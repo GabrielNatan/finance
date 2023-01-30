@@ -1,15 +1,19 @@
 import { type FieldErrorsImpl, useForm } from 'react-hook-form'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
+import { useAuth } from '../../hooks/useAuth'
 import { type FormData } from '../../interface'
 import { Container, Title, Form, Navigation } from './style'
+import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
+  const { toggleToken } = useAuth()
+  const navigate = useNavigate()
 
   const sendForm = (data: any) => {
-    console.log(data)
-    console.log(errors)
+    toggleToken()
+    navigate('/')
   }
 
   function validateFields (name: 'email' | 'password', erros: Partial<FieldErrorsImpl<FormData>>) {
