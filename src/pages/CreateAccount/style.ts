@@ -40,5 +40,5 @@ export const Navigation = styled(Link)`
     color: ${({ theme }) => theme.active};
     text-decoration: none;
     text-align: center;
-
+    font-size: 12px;
 `
