@@ -11,6 +11,7 @@ export const Container = styled.div`
 `
 
 export const InputText = styled.input<InputTextProps>`
+    width: 100%;
     padding: 5px 10px;
     height: 50px;
     border-radius: 10px;
