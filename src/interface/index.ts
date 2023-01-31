@@ -5,3 +5,5 @@ export interface FormData {
   lastName?: string
   confirmPassword?: string
 }
+
+export type FormDataOptions = 'email' | 'password' | 'name' | 'lastName' | 'confirmPassword'
