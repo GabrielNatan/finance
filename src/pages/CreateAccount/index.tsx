@@ -91,8 +91,8 @@ export const CreateAccount = () => {
           text="Entrar"
           type="submit"
         />
-        <Navigation to="/">
-          Create account
+        <Navigation to="/login">
+          Already have an account?
         </Navigation>
       </Form>
     </Container>
