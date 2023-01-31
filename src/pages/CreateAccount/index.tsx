@@ -5,15 +5,23 @@ import { useAuth } from '../../hooks/useAuth'
 import { type FormDataOptions, type FormData } from '../../interface'
 import { Container, Title, Form, Navigation, ContainerInput } from './style'
 import { useNavigate } from 'react-router-dom'
+import { useApi } from '../../hooks/useApi'
 
 export const CreateAccount = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
   const { toggleToken } = useAuth()
   const navigate = useNavigate()
+  const { createUser } = useApi()
 
-  const sendForm = (data: any) => {
-    toggleToken()
-    navigate('/')
+  const sendForm = async (data: any) => {
+    const { email, password, name, lastName } = data
+    try {
+      await createUser(name, lastName, email, password)
+      toggleToken()
+      navigate('/')
+    } catch (error) {
+      console.log('ERRO=> ', error)
+    }
   }
 
   function validateFields (name: FormDataOptions, erros: Partial<FieldErrorsImpl<FormData>>) {
