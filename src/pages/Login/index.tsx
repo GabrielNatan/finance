@@ -54,8 +54,8 @@ export const Login = () => {
           text="Entrar"
           type="submit"
         />
-        <Navigation to="/">
-          Create account
+        <Navigation to="/create-account">
+          Not registered yet? create an account.
         </Navigation>
       </Form>
     </Container>
