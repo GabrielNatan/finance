@@ -1,5 +1,5 @@
 import { type UseFormRegister } from 'react-hook-form'
-import { type FormData } from '../../interface'
+import { type FormDataOptions, type FormData } from '../../interface'
 
 import {
   Container,
@@ -10,11 +10,11 @@ import {
 
 interface InputProps {
   text: string
-  name: 'email' | 'password'
+  name: FormDataOptions
   type: React.HTMLInputTypeAttribute
   register: UseFormRegister<FormData>
   validation: { required: boolean }
-  message: string
+  message: FormData
 }
 
 export const Input = ({ text, type, name, register, validation, message }: InputProps) => {
@@ -25,9 +25,9 @@ export const Input = ({ text, type, name, register, validation, message }: Input
                 {...register(name, validation)}
                 type={type}
                 name={name}
-                message={message !== ''}
+                message={(message[name] !== '')}
             />
-            <MessageError>{message}</MessageError>
+            <MessageError>{message[name]}</MessageError>
         </Container>
   )
 }
