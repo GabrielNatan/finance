@@ -7,6 +7,7 @@ import { useTheme } from './hooks/useTheme'
 import { Login } from './pages/Login'
 import { PrivateRoutes } from './utils/PrivateRoutes'
 import { AuthProvider } from './context/AuthContext'
+import { CreateAccount } from './pages/CreateAccount'
 
 function App () {
   const { isDarkTheme } = useTheme()
@@ -21,6 +22,7 @@ function App () {
               <Route path="/" element={<Home/>}/>
             </Route>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/create-account" element={<CreateAccount/>}/>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
