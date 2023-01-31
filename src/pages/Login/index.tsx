@@ -2,7 +2,7 @@ import { type FieldErrorsImpl, useForm } from 'react-hook-form'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 import { useAuth } from '../../hooks/useAuth'
-import { type FormData } from '../../interface'
+import { type FormDataOptions, type FormData } from '../../interface'
 import { Container, Title, Form, Navigation } from './style'
 import { useNavigate } from 'react-router-dom'
 
@@ -16,18 +16,18 @@ export const Login = () => {
     navigate('/')
   }
 
-  function validateFields (name: 'email' | 'password', erros: Partial<FieldErrorsImpl<FormData>>) {
-    if (erros[name] == null || erros[name] === undefined) { return '' }
+  function validateFields (name: FormDataOptions, erros: Partial<FieldErrorsImpl<FormData>>) {
+    const object: FormData = { email: '', password: '' }
 
     if (erros?.email?.type === 'required') {
-      return 'Email is required'
+      object.email = 'Email is required'
     }
 
     if (erros?.password?.type === 'required') {
-      return 'Password is required'
+      object.password = 'Password is required'
     }
 
-    return ''
+    return object
   }
 
   return (
