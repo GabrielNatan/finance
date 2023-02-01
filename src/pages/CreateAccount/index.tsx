@@ -6,21 +6,38 @@ import { type FormDataOptions, type FormData } from '../../interface'
 import { Container, Title, Form, Navigation, ContainerInput } from './style'
 import { useNavigate } from 'react-router-dom'
 import { useApi } from '../../hooks/useApi'
+import { Alert } from '../../components/Alert'
+import { useState } from 'react'
+import { Loading } from '../../components/Loading'
+
+interface AlertState {
+  message: string
+  type: 'success' | 'error'
+}
 
 export const CreateAccount = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
   const { toggleToken } = useAuth()
   const navigate = useNavigate()
   const { createUser } = useApi()
+  const [activeAlert, setActiveAlert] = useState(false)
+  const [message, setMessage] = useState<AlertState>({ message: '', type: 'success' })
+  const [loading, setLoading] = useState(false)
 
   const sendForm = async (data: any) => {
     const { email, password, name, lastName } = data
+    setLoading(true)
     try {
       await createUser(name, lastName, email, password)
       toggleToken()
       navigate('/')
+      setMessage({ message: 'Usuario cadastrado com sucesso', type: 'success' })
     } catch (error) {
       console.log('ERRO=> ', error)
+      setMessage({ message: 'Usuario não adastrado, tente novamente.', type: 'error' })
+      setActiveAlert(true)
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -51,6 +68,12 @@ export const CreateAccount = () => {
 
   return (
     <Container>
+      <Alert
+        onClose={() => { setActiveAlert(false) }}
+        type={message.type}
+        active={activeAlert}
+        message={message.message}
+      />
       <Form onSubmit={handleSubmit(sendForm)}>
         <Title>Create Account</Title>
         <ContainerInput>
@@ -98,7 +121,9 @@ export const CreateAccount = () => {
         <Button
           type="submit"
           disabled={false}
-        >Entrar</Button>
+        >
+          {loading ? <Loading/> : 'Create user'}
+        </Button>
         <Navigation to="/login">
           Already have an account?
         </Navigation>
