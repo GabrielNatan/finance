@@ -11,6 +11,11 @@ export const ContainerAlert = styled.div<{ active: boolean }>`
     overflow: hidden;
     transition: 300ms;
     position: relative;
+    padding: 0 40px;
+
+    @media screen and (min-width: 768px){
+        padding: 0 0px;
+    }
 `
 
 export const Container = styled.div<ContainerProps>`
@@ -30,4 +35,10 @@ export const Close = styled.div`
     position: absolute;
     right: 15px;
     top: 20px;
+    padding: 0 40px;
+    transition: 300ms;
+    @media screen and (min-width: 768px){
+        padding: 0 0px;
+        right: 15px;
+    }
 `
