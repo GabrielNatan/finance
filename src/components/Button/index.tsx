@@ -3,14 +3,18 @@ import {
 } from './style'
 
 interface ButtonProps {
-  text: string
   type: 'button' | 'submit' | 'reset' | undefined
+  children: JSX.Element | string
+  disabled: boolean
 }
 
-export const Button = ({ text, type }: ButtonProps) => {
+export const Button = ({ type, children, disabled }: ButtonProps) => {
   return (
-        <Container type={type}>
-            {text}
+        <Container
+          type={type}
+          disabled={disabled}
+        >
+            {children}
         </Container>
   )
 }
