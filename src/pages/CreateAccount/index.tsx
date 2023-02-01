@@ -96,9 +96,9 @@ export const CreateAccount = () => {
           message={validateFields('confirmPassword', errors)}
         />
         <Button
-          text="Entrar"
           type="submit"
-        />
+          disabled={false}
+        >Entrar</Button>
         <Navigation to="/login">
           Already have an account?
         </Navigation>
