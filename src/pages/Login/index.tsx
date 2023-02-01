@@ -6,21 +6,31 @@ import { type FormDataOptions, type FormData } from '../../interface'
 import { Container, Title, Form, Navigation } from './style'
 import { useNavigate } from 'react-router-dom'
 import { useApi } from '../../hooks/useApi'
+import { Loading } from '../../components/Loading'
+import { useState } from 'react'
+import { Alert } from '../../components/Alert'
 
 export const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
   const { toggleToken } = useAuth()
   const { login } = useApi()
   const navigate = useNavigate()
+  const [loading, setLoading] = useState(false)
+  const [activeAlert, setActiveAlert] = useState(false)
 
   const sendForm = async (data: any) => {
     const { email, password } = data
+    setLoading(true)
+
     try {
       await login(email, password)
       toggleToken()
       navigate('/')
     } catch (error) {
-      console.log(error)
+      setActiveAlert(true)
+    } finally {
+      console.log('oxe')
+      setLoading(false)
     }
   }
 
@@ -40,6 +50,14 @@ export const Login = () => {
 
   return (
     <Container>
+
+        <Alert
+          onClose={() => { setActiveAlert(false) }}
+          active={activeAlert}
+          type='error'
+          message="Verifique email e senha"
+        />
+
       <Form onSubmit={handleSubmit(sendForm)}>
         <Title>Sign in</Title>
         <Input
@@ -59,9 +77,11 @@ export const Login = () => {
           message={validateFields('password', errors)}
         />
         <Button
-          text="Entrar"
           type="submit"
-        />
+          disabled={loading}
+        >
+          {loading ? <Loading/> : 'Entrar'}
+        </Button>
         <Navigation to="/create-account">
           Not registered yet? create an account.
         </Navigation>
