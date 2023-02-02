@@ -24,12 +24,11 @@ export const Login = () => {
 
     try {
       await login(email, password)
-      toggleToken()
+      toggleToken(true)
       navigate('/')
     } catch (error) {
       setActiveAlert(true)
     } finally {
-      console.log('oxe')
       setLoading(false)
     }
   }
