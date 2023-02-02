@@ -13,8 +13,13 @@ interface InputProps {
   name: FormDataOptions
   type: React.HTMLInputTypeAttribute
   register: UseFormRegister<FormData>
-  validation: { required: boolean }
+  validation: validation
   message: FormData
+}
+
+interface validation {
+  required: boolean
+  validate?: () => boolean
 }
 
 export const Input = ({ text, type, name, register, validation, message }: InputProps) => {

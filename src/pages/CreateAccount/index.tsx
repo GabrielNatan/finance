@@ -25,9 +25,14 @@ export const CreateAccount = () => {
   const [loading, setLoading] = useState(false)
 
   const sendForm = async (data: any) => {
-    const { email, password, name, lastName } = data
+    const { email, password, name, lastName, confirmPassword } = data
     setLoading(true)
     try {
+      if (confirmPassword !== password) {
+        setActiveAlert(true)
+        setMessage({ message: 'The passwords do not match', type: 'error' })
+        return
+      }
       await createUser(name, lastName, email, password)
       toggleToken()
       navigate('/')
