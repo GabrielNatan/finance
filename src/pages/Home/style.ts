@@ -16,7 +16,6 @@ export const Header = styled.div`
     width: 100%;
     background-color: ${({ theme }) => theme.backgroundSecondary};
     border-radius: 0 0 60px 60px;
-    border: 1px solid ${({ theme }) => theme.borderColor};
     padding: 20px 30px 50px 30px;
     display: flex;
     flex-direction: column;
