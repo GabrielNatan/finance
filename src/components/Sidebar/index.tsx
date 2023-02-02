@@ -28,16 +28,16 @@ export const Sidebar = () => {
       <Nav>
         <List>
           <ListItem>
-            <TfiWallet size={20} color="black" /> Home
+            <TfiWallet size={20} /> Home
           </ListItem>
           <ListItem>
-            <GrTransaction size={20} color="black" /> Transactions
+            <GrTransaction size={20} /> Transactions
           </ListItem>
         </List>
       </Nav>
       <Bottom>
         <Config>
-          <AiOutlineSetting size={20} color="black" /> Settings
+          <AiOutlineSetting size={20} /> Settings
         </Config>
       </Bottom>
     </Container>

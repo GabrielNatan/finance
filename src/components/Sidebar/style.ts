@@ -19,6 +19,8 @@ export const Header = styled.div`
 
 export const Name = styled.p`
     font-size: 16px;
+    color: ${({ theme }) => theme.color};
+
 `
 
 export const Nav = styled.nav`
@@ -28,6 +30,7 @@ export const Nav = styled.nav`
 
 export const List = styled.ol`
     list-style: none;
+
 `
 
 export const ListItem = styled.li`
@@ -36,6 +39,7 @@ export const ListItem = styled.li`
     display: flex;
     gap: 10px;
     align-items: center;
+    color: ${({ theme }) => theme.color};
 `
 
 export const Bottom = styled.div`
@@ -48,4 +52,6 @@ export const Config = styled.p`
     display: flex;
     align-items: center;
     gap: 10px;
+    color: ${({ theme }) => theme.color};
+
 `

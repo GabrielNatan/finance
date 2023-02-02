@@ -16,6 +16,7 @@ export const Header = styled.div`
     width: 100%;
     background-color: ${({ theme }) => theme.backgroundSecondary};
     border-radius: 0 0 60px 60px;
+    border: 1px solid ${({ theme }) => theme.borderColor};
     padding: 20px 30px 50px 30px;
     display: flex;
     flex-direction: column;
@@ -49,6 +50,8 @@ export const Text = styled.div`
     font-size: 30px;
     line-height: 35px;
     font-weight: 500;
+    color: ${({ theme }) => theme.color};
+
     @media screen and (min-width: 768px) {
         font-weight: bold;
         font-size: 35px;
@@ -63,6 +66,8 @@ export const Money = styled.div`
     font-size: 40px;
     line-height: 45px;
     font-weight: bold;
+    color: ${({ theme }) => theme.color};
+
     @media screen and (min-width: 768px) {
         font-weight: 500;
         font-size: 35px;

@@ -7,6 +7,7 @@ interface ThemeProps {
 }
 
 export const ThemeContext = createContext({ toggleTheme: () => {}, light: lightTheme, dark: darkTheme, theme: 'light' })
+ThemeContext.displayName = 'Theme'
 
 export const ThemeContextProvider = ({ children }: ThemeProps) => {
   const [isDarkTheme, setisDarkTheme] = useState('light')
