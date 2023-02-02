@@ -1,14 +1,6 @@
-import { useState } from 'react'
+import { useContext } from 'react'
+import { ThemeContext } from '../context/ThemContext'
 
 export const useTheme = () => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false)
-
-  function toggleTheme () {
-    setIsDarkTheme(!isDarkTheme)
-  }
-
-  return {
-    toggleTheme,
-    isDarkTheme
-  }
+  return useContext(ThemeContext)
 }
