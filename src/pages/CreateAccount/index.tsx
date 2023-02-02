@@ -34,7 +34,7 @@ export const CreateAccount = () => {
         return
       }
       await createUser(name, lastName, email, password)
-      toggleToken()
+      toggleToken(true)
       navigate('/')
       setMessage({ message: 'Usuario cadastrado com sucesso', type: 'success' })
     } catch (error) {
