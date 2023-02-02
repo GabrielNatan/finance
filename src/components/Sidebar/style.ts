@@ -16,17 +16,6 @@ export const Header = styled.div`
     flex-direction: column;
     gap: 10px;
 `
-export const ContImage = styled.div`
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 5px solid black;
-    overflow: hidden;
-`
-export const Avatar = styled.img`
-    width: 100%;
-    height: 100%;
-`
 
 export const Name = styled.p`
     font-size: 16px;
