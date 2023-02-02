@@ -20,6 +20,7 @@ function App () {
             </Route>
             <Route path="/login" element={<Login/>}/>
             <Route path="/create-account" element={<CreateAccount/>}/>
+            <Route path="*" element={<div>not found</div>}/>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
