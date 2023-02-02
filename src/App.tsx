@@ -8,6 +8,7 @@ import { Login } from './pages/Login'
 import { PrivateRoutes } from './utils/PrivateRoutes'
 import { AuthProvider } from './context/AuthContext'
 import { CreateAccount } from './pages/CreateAccount'
+import { TemplateDefault } from './Template/Default/Default'
 
 function App () {
   const { isDarkTheme } = useTheme()
@@ -19,7 +20,7 @@ function App () {
         <BrowserRouter>
           <Routes>
             <Route element={<PrivateRoutes/>}>
-              <Route path="/" element={<Home/>}/>
+              <Route path="/" element={<TemplateDefault><Home/></TemplateDefault>}/>
             </Route>
             <Route path="/login" element={<Login/>}/>
             <Route path="/create-account" element={<CreateAccount/>}/>
