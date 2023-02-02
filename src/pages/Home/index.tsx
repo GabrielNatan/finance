@@ -16,12 +16,20 @@ import {
 } from './style'
 import { FaEye, FaBell } from 'react-icons/fa'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
+import { RiMoonLine, RiSunLine } from 'react-icons/ri'
+import { useTheme } from '../../hooks/useTheme'
 
 export const Home = () => {
+  const { toggleTheme, theme } = useTheme()
+
   return (
     <Container>
       <Notification>
-        <FaBell size={20} color="#AAA"/>
+        {theme === 'light'
+          ? <RiSunLine onClick={toggleTheme} size={20} color="#AAA"/>
+          : <RiMoonLine onClick={toggleTheme} size={20} color="#AAA"/>
+        }
+        <FaBell onClick={toggleTheme} size={20} color="#AAA"/>
       </Notification>
       <Header>
         <ContAvatar>
