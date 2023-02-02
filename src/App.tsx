@@ -1,20 +1,16 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from './style/globalStyle'
-import { darkTheme, lightTheme } from './style/theme'
 import { Home } from './pages/Home'
-import { useTheme } from './hooks/useTheme'
 import { Login } from './pages/Login'
 import { PrivateRoutes } from './utils/PrivateRoutes'
 import { AuthProvider } from './context/AuthContext'
 import { CreateAccount } from './pages/CreateAccount'
 import { TemplateDefault } from './Template/Default/Default'
+import { ThemeContextProvider } from './context/ThemContext'
 
 function App () {
-  const { isDarkTheme } = useTheme()
-
   return (
-    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} >
+    <ThemeContextProvider>
       <AuthProvider>
         <GlobalStyle/>
         <BrowserRouter>
@@ -27,7 +23,7 @@ function App () {
           </Routes>
         </BrowserRouter>
       </AuthProvider>
-    </ThemeProvider>
+    </ThemeContextProvider>
   )
 }
 
