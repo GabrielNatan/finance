@@ -107,7 +107,8 @@ export const ContainerCards = styled.div`
     padding: 20px 0;
 `
 export const Left = styled.div`
-
+    display: flex;
+    flex-direction: column;
 `
 
 export const Right = styled.div`

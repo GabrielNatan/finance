@@ -21,6 +21,7 @@ import { RiMoonLine, RiSunLine } from 'react-icons/ri'
 import { useTheme } from '../../hooks/useTheme'
 import { Card } from '../../components/Card'
 import { useAuth } from '../../hooks/useAuth'
+import { List } from '../../components/List'
 
 export const Home = () => {
   const { toggleTheme, theme } = useTheme()
@@ -77,6 +78,7 @@ export const Home = () => {
               icon={<AiOutlineArrowDown size={25}/>}
             />
           </ContainerCards>
+          <List/>
         </Left>
         <Right>
 
