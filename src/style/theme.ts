@@ -1,5 +1,6 @@
 export const lightTheme = {
   color: '#222222',
+  secondaryColor: '#787878',
   background: '#F9F9FA',
   backgroundSecondary: '#FFFFFF',
   borderColor: '#787878',
@@ -15,6 +16,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   color: '#FFFFFF',
+  secondaryColor: '#FFFFFF',
   background: '#15191E',
   backgroundSecondary: '#1B1E28',
   borderColor: '#242732',
