@@ -12,12 +12,14 @@ import {
   Tab,
   Main,
   Left,
-  Right
+  Right,
+  ContainerCards
 } from './style'
 import { FaEye, FaBell } from 'react-icons/fa'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 import { RiMoonLine, RiSunLine } from 'react-icons/ri'
 import { useTheme } from '../../hooks/useTheme'
+import { Card } from '../../components/Card'
 
 export const Home = () => {
   const { toggleTheme, theme } = useTheme()
@@ -51,7 +53,28 @@ export const Home = () => {
       </Header>
       <Main>
         <Left>
-
+          <ContainerCards>
+            <Card
+              text="aqui"
+              onClick={() => {}}
+              icon={<AiOutlineArrowDown size={25}/>}
+            />
+              <Card
+              text="aqui"
+              onClick={() => {}}
+              icon={<AiOutlineArrowDown size={25}/>}
+            />
+              <Card
+              text="aqui"
+              onClick={() => {}}
+              icon={<AiOutlineArrowDown size={25}/>}
+            />
+              <Card
+              text="aqui"
+              onClick={() => {}}
+              icon={<AiOutlineArrowDown size={25}/>}
+            />
+          </ContainerCards>
         </Left>
         <Right>
 

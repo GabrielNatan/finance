@@ -101,7 +101,11 @@ export const Tab = styled.div<{ type: 'success' | 'error' }>`
 export const Main = styled.div`
 
 `
-
+export const ContainerCards = styled.div`
+    display: flex;
+    gap:20px;
+    padding: 20px 0;
+`
 export const Left = styled.div`
 
 `
