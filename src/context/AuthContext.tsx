@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from 'react'
 import { db } from '../api/firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 import PropTypes from 'prop-types'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 
 interface Customer { displayName: string | null, email: string | null, phoneNumber: string | null, photoURL: string | null, uid: string | null }
 const userElement: Customer = { displayName: '', email: '', phoneNumber: '', photoURL: '', uid: '' }
@@ -16,8 +17,7 @@ export const AuthContext = createContext(
 AuthContext.displayName = 'Auth'
 
 export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const abc = localStorage.getItem('user') !== undefined
-  const [token, setToken] = useState(abc)
+  const [token, setToken] = useState(useLocalStorage('user'))
   const [user, setUser] = useState<Customer>({ displayName: '', email: '', phoneNumber: '', photoURL: '', uid: '' })
   const { auth } = db
 
