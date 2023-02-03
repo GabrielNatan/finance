@@ -20,10 +20,12 @@ import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 import { RiMoonLine, RiSunLine } from 'react-icons/ri'
 import { useTheme } from '../../hooks/useTheme'
 import { Card } from '../../components/Card'
+import { useAuth } from '../../hooks/useAuth'
 
 export const Home = () => {
   const { toggleTheme, theme } = useTheme()
-
+  const { user } = useAuth()
+  const image = user.photoURL !== null ? user.photoURL : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
   return (
     <Container>
       <Notification>
@@ -38,7 +40,7 @@ export const Home = () => {
             <Avatar
                  width={60}
                  height={60}
-                 src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+                 src={image}
                  alt="user avatar"
             />
         </ContAvatar>
