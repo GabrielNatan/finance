@@ -26,6 +26,7 @@ export const Login = () => {
       await login(email, password)
       toggleToken(true)
       navigate('/')
+      localStorage.setItem('user', 'true')
     } catch (error) {
       setActiveAlert(true)
     } finally {
