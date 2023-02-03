@@ -99,7 +99,8 @@ export const Tab = styled.div<{ type: 'success' | 'error' }>`
 `
 
 export const Main = styled.div`
-
+    display: flex;
+    gap: 20px;
 `
 export const ContainerCards = styled.div`
     display: flex;
@@ -107,10 +108,24 @@ export const ContainerCards = styled.div`
     padding: 20px 0;
 `
 export const Left = styled.div`
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
 `
 
 export const Right = styled.div`
-
+    width: 50%;
+    height: 100%;
+`
+export const ContainerCreditCard = styled.div`
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    background-color: ${({ theme }) => theme.backgroundSecondary};
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px ${({ theme }) => theme.shadowColor};
 `

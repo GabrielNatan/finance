@@ -13,7 +13,8 @@ import {
   Main,
   Left,
   Right,
-  ContainerCards
+  ContainerCards,
+  ContainerCreditCard
 } from './style'
 import { FaEye, FaBell } from 'react-icons/fa'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
@@ -22,6 +23,7 @@ import { useTheme } from '../../hooks/useTheme'
 import { Card } from '../../components/Card'
 import { useAuth } from '../../hooks/useAuth'
 import { List } from '../../components/List'
+import { CreditCard } from '../../components/CreditCard '
 
 export const Home = () => {
   const { toggleTheme, theme } = useTheme()
@@ -81,7 +83,11 @@ export const Home = () => {
           <List/>
         </Left>
         <Right>
-
+          <ContainerCreditCard>
+            <CreditCard/>
+            <CreditCard/>
+            <CreditCard/>
+          </ContainerCreditCard>
         </Right>
       </Main>
     </Container>
