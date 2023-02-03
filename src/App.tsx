@@ -17,6 +17,7 @@ function App () {
           <Routes>
             <Route element={<PrivateRoutes/>}>
               <Route path="/" element={<TemplateDefault><Home/></TemplateDefault>}/>
+              <Route path="/settings" element={<TemplateDefault><p>Config</p></TemplateDefault>}/>
             </Route>
             <Route path="/login" element={<Login/>}/>
             <Route path="/create-account" element={<CreateAccount/>}/>

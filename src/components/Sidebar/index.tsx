@@ -6,7 +6,8 @@ import {
   List,
   ListItem,
   Bottom,
-  Config
+  Config,
+  Navigation
 } from './style'
 import { AiOutlineSetting } from 'react-icons/ai'
 import { TfiWallet } from 'react-icons/tfi'
@@ -31,15 +32,20 @@ export const Sidebar = () => {
       <Nav>
         <List>
           <ListItem>
-            <TfiWallet size={20} /> Home
+            <Navigation to="/">
+              <TfiWallet size={20} /> Home
+            </Navigation>
           </ListItem>
           <ListItem>
-            <GrTransaction size={20} /> Transactions
+            <Navigation to="/transactions">
+              <GrTransaction size={20} /> Transactions
+            </Navigation>
+
           </ListItem>
         </List>
       </Nav>
       <Bottom>
-        <Config>
+        <Config to="/settings">
           <AiOutlineSetting size={20} /> Settings
         </Config>
       </Bottom>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -32,14 +33,18 @@ export const List = styled.ol`
     list-style: none;
 
 `
-
+export const Navigation = styled(Link)`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: ${({ theme }) => theme.color};
+`
 export const ListItem = styled.li`
     padding: 10px 0;
     cursor: pointer;
     display: flex;
-    gap: 10px;
     align-items: center;
-    color: ${({ theme }) => theme.color};
 `
 
 export const Bottom = styled.div`
@@ -47,11 +52,11 @@ export const Bottom = styled.div`
     cursor: pointer;
 `
 
-export const Config = styled.p`
+export const Config = styled(Link)`
     padding: 20px 0 20px 0;
     display: flex;
     align-items: center;
     gap: 10px;
     color: ${({ theme }) => theme.color};
-
+    text-decoration: none;
 `
