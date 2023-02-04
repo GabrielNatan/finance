@@ -7,6 +7,7 @@ import { AuthProvider } from './context/AuthContext'
 import { CreateAccount } from './pages/CreateAccount'
 import { TemplateDefault } from './Template/Default/Default'
 import { ThemeContextProvider } from './context/ThemContext'
+import { Settings } from './pages/Settings'
 
 function App () {
   return (
@@ -17,7 +18,7 @@ function App () {
           <Routes>
             <Route element={<PrivateRoutes/>}>
               <Route path="/" element={<TemplateDefault><Home/></TemplateDefault>}/>
-              <Route path="/settings" element={<TemplateDefault><p>Config</p></TemplateDefault>}/>
+              <Route path="/settings" element={<TemplateDefault><Settings/></TemplateDefault>}/>
             </Route>
             <Route path="/login" element={<Login/>}/>
             <Route path="/create-account" element={<CreateAccount/>}/>
