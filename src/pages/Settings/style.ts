@@ -41,7 +41,7 @@ export const Activated = styled.div`
 export const ContBottomInfo = styled.div`
 
 `
-export const Tag = styled.div`
+export const TagTitle = styled.div`
 
 `
 export const TagText = styled.div`

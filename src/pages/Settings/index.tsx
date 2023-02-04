@@ -9,7 +9,7 @@ import {
   Name,
   Activated,
   ContBottomInfo,
-  Tag,
+  TagTitle,
   TagText
 } from './style'
 // import { useTheme } from '../../hooks/useTheme'
@@ -36,7 +36,7 @@ export const Settings = () => {
             <Name>Gabriel Natan</Name>
             <Activated>Activated : 30 days</Activated>
             <ContBottomInfo>
-              <Tag>Phone number</Tag>
+              <TagTitle>Phone number</TagTitle>
               <TagText>(11)99999-9999</TagText>
             </ContBottomInfo>
           </Info>
