@@ -10,11 +10,16 @@ import {
   Activated,
   ContBottomInfo,
   TagTitle,
-  TagText
+  TagText,
+  ContTag,
+  Bottom,
+  ContTagsInfo,
+  ContButtons
 } from './style'
 // import { useTheme } from '../../hooks/useTheme'
 import { useAuth } from '../../hooks/useAuth'
-
+import { Tag } from '../../components/Tag'
+import { Button } from '../../components/Button'
 export const Settings = () => {
   // const { toggleTheme, theme } = useTheme()
   const { user } = useAuth()
@@ -36,11 +41,46 @@ export const Settings = () => {
             <Name>Gabriel Natan</Name>
             <Activated>Activated : 30 days</Activated>
             <ContBottomInfo>
-              <TagTitle>Phone number</TagTitle>
-              <TagText>(11)99999-9999</TagText>
+              <ContTag>
+                <TagTitle>Email</TagTitle>
+                <TagText>email@email.dev.com.br</TagText>
+              </ContTag>
+              <ContTag>
+                <TagTitle>Phone number</TagTitle>
+                <TagText>(11)99999-9999</TagText>
+              </ContTag>
             </ContBottomInfo>
           </Info>
         </Top>
+
+        <Bottom>
+          <ContTagsInfo>
+            <Tag/>
+            <Tag/>
+            <Tag/>
+          </ContTagsInfo>
+          <ContTagsInfo>
+            <Tag/>
+            <Tag/>
+            <Tag/>
+          </ContTagsInfo>
+          <ContTagsInfo>
+            <Tag/>
+            <Tag/>
+            <Tag/>
+          </ContTagsInfo>
+
+        </Bottom>
+
+        <ContButtons>
+          <div style={{ width: 100 }}>
+            <Button type='button' disabled={false} >Edit</Button>
+          </div>
+          <div style={{ width: 100 }}>
+            <Button type='button' disabled={false} >Cancel</Button>
+          </div>
+        </ContButtons>
+
       </Main>
     </Container>
   )
