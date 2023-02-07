@@ -44,7 +44,6 @@ export const Home = () => {
                  width={60}
                  height={60}
                  src={image}
-                 alt="user avatar"
             />
         </ContAvatar>
         <ContBalance>

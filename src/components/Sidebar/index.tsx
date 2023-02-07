@@ -25,7 +25,6 @@ export const Sidebar = () => {
           width={90}
           height={90}
           src={image}
-          alt={`${user.displayName !== null ? user.displayName : 'user'} avatar`}
         />
         <Name>{user.displayName}</Name>
       </Header>
