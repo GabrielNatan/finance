@@ -14,40 +14,62 @@ import {
   ContTag,
   Bottom,
   ContTagsInfo,
-  ContButtons
+  ContButtons,
+  ContEdit,
+  Input
 } from './style'
 // import { useTheme } from '../../hooks/useTheme'
 import { useAuth } from '../../hooks/useAuth'
 import { Tag } from '../../components/Tag'
 import { Button } from '../../components/Button'
+import { FaCamera } from 'react-icons/fa'
+import { useState } from 'react'
+import { useApi } from '../../hooks/useApi'
 export const Settings = () => {
   // const { toggleTheme, theme } = useTheme()
   const { user } = useAuth()
-  const image = user.photoURL !== null ? user.photoURL : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
+  const { updateUser } = useApi()
+  const [file, setFile] = useState<File>()
+  const [update, setUpdate] = useState<boolean>(false)
+  async function uploadImage (event: React.ChangeEvent<HTMLInputElement>) {
+    const { files } = event.target
+    const selectedFiles = files as FileList
+    setFile(selectedFiles?.[0])
+  }
+
+  async function updatePerfil () {
+    if (file !== undefined) {
+      await updateUser(file)
+    }
+  }
+
   return (
     <Container>
       <Title>Profile</Title>
       <Main>
         <Top>
-          <ContAvatar>
+          <ContAvatar >
             <Avatar
               height={150}
               width={150}
-              alt="legal"
-              src={image}
+              src={user.photoURL !== null ? user.photoURL : ''}
               />
+              {update && <ContEdit htmlFor='upload'>
+                <FaCamera color='#6587FF' size={20}/>
+              </ContEdit>}
+              <Input id='upload' name='upload' type="file" onChange={uploadImage}/>
           </ContAvatar>
           <Info>
-            <Name>Gabriel Natan</Name>
-            <Activated>Activated : 30 days</Activated>
+            <Name>{user.displayName}</Name>
+            <Activated>Activated : {user.activated}</Activated>
             <ContBottomInfo>
               <ContTag>
                 <TagTitle>Email</TagTitle>
-                <TagText>email@email.dev.com.br</TagText>
+                <TagText>{user.email !== null ? user.email : '--'}</TagText>
               </ContTag>
               <ContTag>
                 <TagTitle>Phone number</TagTitle>
-                <TagText>(11)99999-9999</TagText>
+                <TagText>{user.phoneNumber !== null ? user.phoneNumber : '--'}</TagText>
               </ContTag>
             </ContBottomInfo>
           </Info>
@@ -74,11 +96,11 @@ export const Settings = () => {
 
         <ContButtons>
           <div style={{ width: 100 }}>
-            <Button type='button' disabled={false} >Edit</Button>
+            <Button onclick={() => { setUpdate(!update) }} type='button' disabled={false} >{update ? 'Cancel' : 'Edit'}</Button>
           </div>
-          <div style={{ width: 100 }}>
-            <Button type='button' disabled={false} >Cancel</Button>
-          </div>
+         {update && <div style={{ width: 100 }}>
+            <Button onclick={updatePerfil} type='button' disabled={false} >Concluir</Button>
+          </div>}
         </ContButtons>
 
       </Main>

@@ -33,6 +33,27 @@ export const Top = styled.div`
 export const ContAvatar = styled.div`
     position: relative;
 `
+
+export const Input = styled.input`
+     visibility: hidden;
+     width: 0;
+     height: 0;
+`
+export const ContEdit = styled.label`
+    cursor: pointer;
+    background-color: #8BA6FF;
+    border: 3px solid #6587FF;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    right: 8px;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
 export const Info = styled.div`
     display: flex;
     flex-direction: column;
