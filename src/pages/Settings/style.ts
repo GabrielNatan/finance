@@ -10,6 +10,7 @@ export const Container = styled.div`
 `
 
 export const Title = styled.h1`
+    color: ${({ theme }) => theme.color};
 
 `
 export const Main = styled.div`
@@ -68,9 +69,12 @@ export const Name = styled.h1`
     font-weight: 500;
     font-size: 60px;
     line-height: 60px;
+    color: ${({ theme }) => theme.color};
+
 `
 export const Activated = styled.div`
     font-size: 20px;
+    color: ${({ theme }) => theme.color};
 `
 export const ContBottomInfo = styled.div`
     display: flex;
@@ -78,9 +82,11 @@ export const ContBottomInfo = styled.div`
     padding: 30px 0;
 `
 export const TagTitle = styled.div`
+    color: ${({ theme }) => theme.color};
 
 `
 export const TagText = styled.div`
+    color: ${({ theme }) => theme.color};
 
 `
 export const Bottom = styled.div`
