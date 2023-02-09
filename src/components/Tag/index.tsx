@@ -1,10 +1,13 @@
-import { Container, Title, SubTitle } from './style'
+import { Container, Title, SubTitle, Input } from './style'
 
-export const Tag = () => {
+export const Tag = ({ title, text, edit, color = '#CCC' }: { title: string, text: string, edit: boolean, color?: string }) => {
   return (
-    <Container>
-      <Title>Address</Title>
-      <SubTitle>email@email.dev.com.br</SubTitle>
+    <Container color={color}>
+      <Title>{title}</Title>
+      {edit
+        ? <Input message={true}/>
+        : <SubTitle>{text}</SubTitle>
+      }
     </Container>
   )
 }
