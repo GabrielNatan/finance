@@ -12,6 +12,8 @@ export const lightTheme = {
   green30: '#00B0864D',
   red: '#FF1B1B',
   red30: '#FF1B1B4D',
+  roxo: '#C465FF',
+  roxo30: '#C465FF4D',
   white: '#FFFFFF'
 }
 
@@ -29,5 +31,7 @@ export const darkTheme = {
   green30: '#00B0864D',
   red: '#FF1B1B',
   red30: '#FF1B1B4D',
+  roxo: '#C465FF',
+  roxo30: '#C465FF4D',
   white: '#FFFFFF'
 }
