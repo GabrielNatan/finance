@@ -18,15 +18,14 @@ import {
   ContEdit,
   Input
 } from './style'
-// import { useTheme } from '../../hooks/useTheme'
 import { useAuth } from '../../hooks/useAuth'
 import { Tag } from '../../components/Tag'
 import { Button } from '../../components/Button'
 import { FaCamera } from 'react-icons/fa'
 import { useState } from 'react'
 import { useApi } from '../../hooks/useApi'
+import { lightTheme } from '../../style/theme'
 export const Settings = () => {
-  // const { toggleTheme, theme } = useTheme()
   const { user } = useAuth()
   const { updateUser } = useApi()
   const [file, setFile] = useState<File>()
@@ -77,19 +76,19 @@ export const Settings = () => {
 
         <Bottom>
           <ContTagsInfo>
-            <Tag/>
-            <Tag/>
-            <Tag/>
+            <Tag color={lightTheme.green} title="Address" text={user.email !== null ? user.email : ''} edit={update} />
+            <Tag color={lightTheme.green} title="City" text={user.email !== null ? user.email : ''} edit={update} />
+            <Tag color={lightTheme.green} title="State/Country" text={user.email !== null ? user.email : ''} edit={update} />
           </ContTagsInfo>
           <ContTagsInfo>
-            <Tag/>
-            <Tag/>
-            <Tag/>
+            <Tag color={lightTheme.roxo} title="Address" text={user.email !== null ? user.email : ''} edit={update} />
+            <Tag color={lightTheme.roxo} title="City" text={user.email !== null ? user.email : ''} edit={update} />
+            <Tag color={lightTheme.roxo} title="State/Country" text={user.email !== null ? user.email : ''} edit={update} />
           </ContTagsInfo>
           <ContTagsInfo>
-            <Tag/>
-            <Tag/>
-            <Tag/>
+            <Tag color={lightTheme.red} title="Address" text={user.email !== null ? user.email : ''} edit={update} />
+            <Tag color={lightTheme.red} title="City" text={user.email !== null ? user.email : ''} edit={update} />
+            <Tag color={lightTheme.red} title="State/Country" text={user.email !== null ? user.email : ''} edit={update} />
           </ContTagsInfo>
 
         </Bottom>
