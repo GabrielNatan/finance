@@ -8,10 +8,6 @@ import {
   Info,
   Name,
   Activated,
-  ContBottomInfo,
-  TagTitle,
-  TagText,
-  ContTag,
   Bottom,
   ContTagsInfo,
   ContButtons,
@@ -47,61 +43,113 @@ export const Settings = () => {
       <Title>Profile</Title>
       <Main>
         <Top>
-          <ContAvatar >
+          <ContAvatar>
             <Avatar
               height={150}
               width={150}
               src={user.photoURL !== null ? user.photoURL : ''}
-              />
-              {update && <ContEdit htmlFor='upload'>
-                <FaCamera color='#6587FF' size={20}/>
-              </ContEdit>}
-              <Input id='upload' name='upload' type="file" onChange={uploadImage}/>
+            />
+            {update && (
+              <ContEdit htmlFor="upload">
+                <FaCamera color="#6587FF" size={20} />
+              </ContEdit>
+            )}
+            <Input
+              id="upload"
+              name="upload"
+              type="file"
+              onChange={uploadImage}
+            />
           </ContAvatar>
           <Info>
             <Name>{user.displayName}</Name>
             <Activated>Activated : {user.activated}</Activated>
-            <ContBottomInfo>
-              <ContTag>
-                <TagTitle>Email</TagTitle>
-                <TagText>{user.email !== null ? user.email : '--'}</TagText>
-              </ContTag>
-              <ContTag>
-                <TagTitle>Phone number</TagTitle>
-                <TagText>{user.phoneNumber !== null ? user.phoneNumber : '--'}</TagText>
-              </ContTag>
-            </ContBottomInfo>
           </Info>
         </Top>
 
         <Bottom>
           <ContTagsInfo>
-            <Tag color={lightTheme.green} title="Address" text={user.email !== null ? user.email : ''} edit={update} />
-            <Tag color={lightTheme.green} title="City" text={user.email !== null ? user.email : ''} edit={update} />
-            <Tag color={lightTheme.green} title="State/Country" text={user.email !== null ? user.email : ''} edit={update} />
+            <Tag
+              color={lightTheme.green}
+              title="Email"
+              text={user.email !== null ? user.email : ''}
+              edit={update}
+            />
+            <Tag
+              color={lightTheme.green}
+              title="Phone Number"
+              text={user.phoneNumber !== null ? user.phoneNumber : '--'}
+              edit={update}
+            />
+            <Tag
+              color={lightTheme.green}
+              title="Job title"
+              text={user.email !== null ? user.email : ''}
+              edit={update}
+            />
           </ContTagsInfo>
           <ContTagsInfo>
-            <Tag color={lightTheme.roxo} title="Address" text={user.email !== null ? user.email : ''} edit={update} />
-            <Tag color={lightTheme.roxo} title="City" text={user.email !== null ? user.email : ''} edit={update} />
-            <Tag color={lightTheme.roxo} title="State/Country" text={user.email !== null ? user.email : ''} edit={update} />
+            <Tag
+              color={lightTheme.roxo}
+              title="Street address"
+              text={user.email !== null ? user.email : ''}
+              edit={update}
+            />
+            <Tag
+              color={lightTheme.roxo}
+              title="Country/Region"
+              text={user.email !== null ? user.email : ''}
+              edit={update}
+            />
+            <Tag
+              color={lightTheme.roxo}
+              title="Apt, suite"
+              text={user.email !== null ? user.email : ''}
+              edit={update}
+            />
           </ContTagsInfo>
           <ContTagsInfo>
-            <Tag color={lightTheme.red} title="Address" text={user.email !== null ? user.email : ''} edit={update} />
-            <Tag color={lightTheme.red} title="City" text={user.email !== null ? user.email : ''} edit={update} />
-            <Tag color={lightTheme.red} title="State/Country" text={user.email !== null ? user.email : ''} edit={update} />
+            <Tag
+              color={lightTheme.red}
+              title="City"
+              text={user.email !== null ? user.email : ''}
+              edit={update}
+            />
+            <Tag
+              color={lightTheme.red}
+              title="State"
+              text={user.email !== null ? user.email : ''}
+              edit={update}
+            />
+            <Tag
+              color={lightTheme.red}
+              title="Zip code"
+              text={user.email !== null ? user.email : ''}
+              edit={update}
+            />
           </ContTagsInfo>
-
         </Bottom>
 
         <ContButtons>
           <div style={{ width: 100 }}>
-            <Button onclick={() => { setUpdate(!update) }} type='button' disabled={false} >{update ? 'Cancel' : 'Edit'}</Button>
+            <Button
+              onclick={() => {
+                setUpdate(!update)
+              }}
+              type="button"
+              disabled={false}
+            >
+              {update ? 'Cancel' : 'Edit'}
+            </Button>
           </div>
-         {update && <div style={{ width: 100 }}>
-            <Button onclick={updatePerfil} type='button' disabled={false} >Concluir</Button>
-          </div>}
+          {update && (
+            <div style={{ width: 100 }}>
+              <Button onclick={updatePerfil} type="button" disabled={false}>
+                Concluir
+              </Button>
+            </div>
+          )}
         </ContButtons>
-
       </Main>
     </Container>
   )

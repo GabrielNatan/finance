@@ -26,7 +26,6 @@ export const Main = styled.div`
     
     }
 `
-
 export const Top = styled.div`
     display: flex;
     gap: 40px;
@@ -48,8 +47,8 @@ export const ContEdit = styled.label`
     height: 35px;
     border-radius: 50%;
     position: absolute;
-    right: 8px;
-    bottom: 50px;
+    right: -0px;
+    bottom: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,11 +57,7 @@ export const ContEdit = styled.label`
 export const Info = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-`
-export const ContTag = styled.div`
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
 `
 
 export const Name = styled.h1`
@@ -76,19 +71,7 @@ export const Activated = styled.div`
     font-size: 20px;
     color: ${({ theme }) => theme.color};
 `
-export const ContBottomInfo = styled.div`
-    display: flex;
-    gap: 50px;
-    padding: 30px 0;
-`
-export const TagTitle = styled.div`
-    color: ${({ theme }) => theme.color};
 
-`
-export const TagText = styled.div`
-    color: ${({ theme }) => theme.color};
-
-`
 export const Bottom = styled.div`
     padding: 40px 0;
     display: flex;
