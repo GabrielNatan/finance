@@ -5,21 +5,37 @@ import PropTypes from 'prop-types'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 import moment from 'moment'
 
-interface Customer { activated: string | undefined, displayName: string | null, email: string | null, phoneNumber: string | null, photoURL: string | null, uid: string | null }
-const userElement: Customer = { activated: '', displayName: '', email: '', phoneNumber: '', photoURL: '', uid: '' }
+interface Customer {
+  activated: string | undefined
+  displayName: string | null
+  email: string | null
+  phoneNumber: string | null
+  photoURL: string | null
+  uid: string | null
+}
+
+const defaultCustomer: Customer = {
+  activated: '',
+  displayName: '',
+  email: '',
+  phoneNumber: '',
+  photoURL: '',
+  uid: ''
+}
 
 export const AuthContext = createContext(
   {
     token: false,
     toggleToken: (value: boolean) => { console.log('aqui') },
-    user: userElement
+    user: defaultCustomer
   }
 )
+
 AuthContext.displayName = 'Auth'
 
 export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [token, setToken] = useState(useLocalStorage('user'))
-  const [user, setUser] = useState<Customer>({ activated: '', displayName: '', email: '', phoneNumber: '', photoURL: '', uid: '' })
+  const [user, setUser] = useState<Customer>(defaultCustomer)
   const { auth } = db
 
   function toggleToken (value: boolean) {
@@ -29,8 +45,14 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user != null) {
-        console.log('Null ', user)
-        const currentUser = { activated: moment(user.metadata.creationTime).fromNow(), displayName: user.displayName, email: user.email, phoneNumber: user.phoneNumber, photoURL: user.photoURL, uid: user.uid }
+        const currentUser = {
+          activated: moment(user.metadata.creationTime).fromNow(),
+          displayName: user.displayName,
+          email: user.email,
+          phoneNumber: user.phoneNumber,
+          photoURL: user.photoURL,
+          uid: user.uid
+        }
         setUser(currentUser)
         setToken(true)
       } else {
