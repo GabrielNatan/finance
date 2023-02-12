@@ -6,13 +6,7 @@ export const Container = styled.div`
     height: 100%;
 `
 
-export const Notification = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 0;
-`
-export const Header = styled.div`
+export const HeaderStyle = styled.div`
     width: 100%;
     background-color: ${({ theme }) => theme.backgroundSecondary};
     border-radius: 0 0 60px 60px;
