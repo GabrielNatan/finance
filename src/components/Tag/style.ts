@@ -38,6 +38,8 @@ export const Input = styled.input<InputTextProps>`
         -webkit-box-shadow: 0px 0px 0px 30px ${({ theme }) => theme.backgroundSecondary} inset;
         -webkit-text-fill-color: ${({ theme }) => theme.color} !important;
     }
+`
 
-
+export const MessageError = styled.div`
+    color: ${({ theme }) => theme.red};
 `

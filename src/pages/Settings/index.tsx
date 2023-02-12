@@ -1,7 +1,6 @@
 import { Avatar } from '../../components/Avatar'
 import {
   Container,
-  Title,
   Main,
   Top,
   ContAvatar,
@@ -13,7 +12,8 @@ import {
   ContTagsInfo,
   ContButtons,
   ContEdit,
-  Input
+  Input,
+  MessageError
 } from './style'
 import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -26,6 +26,7 @@ import { useApi } from '../../hooks/useApi'
 import { lightTheme } from '../../style/theme'
 import { useForm } from 'react-hook-form'
 import { type TypeOfFields, type FieldsTypes } from '../../interface'
+import { Header } from '../../components/Header'
 
 export const Settings = () => {
   const { user } = useAuth()
@@ -81,7 +82,7 @@ export const Settings = () => {
 
   return (
     <Container>
-      <Title>Profile</Title>
+      <Header page='Profile'/>
       <Main onSubmit={handleSubmit(sendForm)}>
         <Top>
           <ContAvatar>
@@ -105,8 +106,8 @@ export const Settings = () => {
           <Info>
             {update
               ? <>
-                <InputName type="text" {...register('name')}/>
-                {errors?.name?.message}
+                <InputName error={errors?.name?.message !== undefined} type="text" {...register('name')}/>
+                <MessageError>{errors?.name?.message}</MessageError>
               </>
               : <Name>{user.displayName}</Name>
             }

@@ -1,6 +1,6 @@
 import { type UseFormRegister } from 'react-hook-form'
 import { type FieldsTypes, type TypeOfFields } from '../../interface'
-import { Container, Title, SubTitle, Input } from './style'
+import { Container, Title, SubTitle, Input, MessageError } from './style'
 
 interface TagProps {
   title: string
@@ -19,7 +19,7 @@ export const Tag = ({ title, text, edit, message, color = '#CCC', register, type
       {edit
         ? <>
           <Input {...register(typeOfFields)} message={(message === undefined || message !== '')}/>
-          {message}
+          <MessageError>{message}</MessageError>
         </>
         : <SubTitle>{text}</SubTitle>
       }

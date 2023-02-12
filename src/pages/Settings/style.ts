@@ -6,7 +6,6 @@ export const Container = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
 `
 
 export const Title = styled.h1`
@@ -67,13 +66,21 @@ export const Name = styled.h1`
     color: ${({ theme }) => theme.color};
 
 `
-export const InputName = styled.input`
+export const InputName = styled.input<{ error: boolean }>`
     font-weight: 500;
     width: 600px;
     font-size: 60px;
     line-height: 60px;
     color: ${({ theme }) => theme.color};
+    background-color: ${({ theme }) => theme.backgroundSecondary};
+    border: 1px solid ${({ theme }) => theme.borderColor};
+    border-color: ${({ theme, error }) => error ? theme.red : theme.borderColor};
+    outline-color: ${({ theme, error }) => error ? theme.red : theme.borderColor};
     border-radius: 10px;
+`
+
+export const MessageError = styled.div`
+    color: ${({ theme }) => theme.red};
 `
 export const Activated = styled.div`
     font-size: 20px;
