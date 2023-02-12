@@ -7,3 +7,18 @@ export interface FormData {
 }
 
 export type FormDataOptions = 'email' | 'password' | 'name' | 'lastName' | 'confirmPassword'
+
+export interface FieldsTypes {
+  name: string | null
+  email: string | null
+  jobTitle: string | null
+  phoneName: string | null
+  streetAddress: string | null
+  countryRegion: string | null
+  apt: string | null
+  city: string | null
+  state: string | null
+  zipCode: string | null
+}
+
+export type TypeOfFields = 'name' | 'email' | 'jobTitle' | 'phoneName' | 'streetAddress' | 'countryRegion' | 'apt' | 'city' | 'state' | 'zipCode'
