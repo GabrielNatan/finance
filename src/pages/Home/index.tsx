@@ -13,8 +13,8 @@ import {
   Main,
   Left,
   Right,
-  ContainerCards,
-  ContainerCreditCard
+  ContainerCards
+  // ContainerCreditCard
 } from './style'
 import { FaEye, FaBell } from 'react-icons/fa'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
@@ -23,12 +23,11 @@ import { useTheme } from '../../hooks/useTheme'
 import { Card } from '../../components/Card'
 import { useAuth } from '../../hooks/useAuth'
 import { List } from '../../components/List'
-import { CreditCard } from '../../components/CreditCard '
 
 export const Home = () => {
   const { toggleTheme, theme } = useTheme()
   const { user } = useAuth()
-  const image = user.photoURL !== null ? user.photoURL : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
+  const image = user.photoURL !== null && user.photoURL !== '' ? user.photoURL : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
   return (
     <Container>
       <Notification>
@@ -82,11 +81,7 @@ export const Home = () => {
           <List/>
         </Left>
         <Right>
-          <ContainerCreditCard>
-            <CreditCard/>
-            <CreditCard/>
-            <CreditCard/>
-          </ContainerCreditCard>
+
         </Right>
       </Main>
     </Container>
