@@ -5,15 +5,15 @@ import {
   Nav,
   List,
   ListItem,
-  Bottom,
-  Config,
-  Navigation
+  Bottom
 } from './style'
 import { AiOutlineSetting } from 'react-icons/ai'
 import { TfiWallet } from 'react-icons/tfi'
-import { GrTransaction } from 'react-icons/gr'
+import { BiTransfer } from 'react-icons/bi'
+
 import { Avatar } from '../Avatar'
 import { useAuth } from '../../hooks/useAuth'
+import { NavLink } from 'react-router-dom'
 
 export const Sidebar = () => {
   const { user } = useAuth()
@@ -31,22 +31,41 @@ export const Sidebar = () => {
       <Nav>
         <List>
           <ListItem>
-            <Navigation to="/">
+            <NavLink
+              to="/"
+              className={({ isActive }) => {
+                console.log('isActive ', isActive)
+                return isActive ? 'active' : undefined
+              }}
+
+            >
               <TfiWallet size={20} /> Home
-            </Navigation>
+            </NavLink>
           </ListItem>
           <ListItem>
-            <Navigation to="/transactions">
-              <GrTransaction size={20} /> Transactions
-            </Navigation>
+            <NavLink
+              to="/transactions"
+              className={({ isActive }) => {
+                console.log('isActive ', isActive)
+                return isActive ? 'active' : undefined
+              }}
 
+            >
+              <BiTransfer size={20} /> Transactions
+            </NavLink>
           </ListItem>
         </List>
       </Nav>
       <Bottom>
-        <Config to="/settings">
+        <NavLink
+          to="/settings"
+          className={({ isActive }) => {
+            console.log('isActive ', isActive)
+            return isActive ? 'active' : undefined
+          }}
+          >
           <AiOutlineSetting size={20} /> Settings
-        </Config>
+        </NavLink>
       </Bottom>
     </Container>
   )
