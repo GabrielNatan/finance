@@ -46,7 +46,7 @@ export const Settings = () => {
       apt: '',
       city: user.phoneNumber,
       countryRegion: user.phoneNumber,
-      phoneName: user.phoneNumber,
+      phoneNumber: user.phoneNumber,
       state: user.phoneNumber,
       streetAddress: user.phoneNumber,
       zipCode: user.phoneNumber
@@ -130,9 +130,9 @@ export const Settings = () => {
               title="Phone Number"
               text={user.phoneNumber !== null ? user.phoneNumber : '--'}
               edit={update}
-              message={verifyErrorMessage('phoneName')}
+              message={verifyErrorMessage('phoneNumber')}
               register={register}
-              typeOfFields="phoneName"
+              typeOfFields="phoneNumber"
             />
             <Tag
               color={lightTheme.green}
