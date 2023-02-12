@@ -13,7 +13,7 @@ export const Title = styled.h1`
     color: ${({ theme }) => theme.color};
 
 `
-export const Main = styled.div`
+export const Main = styled.form`
     flex: 1;
     background-color: ${({ theme }) => theme.backgroundSecondary};
     padding: 80px;
@@ -66,6 +66,14 @@ export const Name = styled.h1`
     line-height: 60px;
     color: ${({ theme }) => theme.color};
 
+`
+export const InputName = styled.input`
+    font-weight: 500;
+    width: 600px;
+    font-size: 60px;
+    line-height: 60px;
+    color: ${({ theme }) => theme.color};
+    border-radius: 10px;
 `
 export const Activated = styled.div`
     font-size: 20px;
