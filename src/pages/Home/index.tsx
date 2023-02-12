@@ -27,7 +27,7 @@ export const Home = () => {
   const image = user.photoURL !== null && user.photoURL !== '' ? user.photoURL : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
   return (
     <Container>
-      <Header page=''/>
+      <Header page='Dashboard'/>
       <HeaderStyle>
         <ContAvatar>
             <Avatar
