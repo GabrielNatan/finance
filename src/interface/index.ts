@@ -12,7 +12,7 @@ export interface FieldsTypes {
   name: string | null
   email: string | null
   jobTitle: string | null
-  phoneName: string | null
+  phoneNumber: string | null
   streetAddress: string | null
   countryRegion: string | null
   apt: string | null
@@ -21,4 +21,4 @@ export interface FieldsTypes {
   zipCode: string | null
 }
 
-export type TypeOfFields = 'name' | 'email' | 'jobTitle' | 'phoneName' | 'streetAddress' | 'countryRegion' | 'apt' | 'city' | 'state' | 'zipCode'
+export type TypeOfFields = 'name' | 'email' | 'jobTitle' | 'phoneNumber' | 'streetAddress' | 'countryRegion' | 'apt' | 'city' | 'state' | 'zipCode'
