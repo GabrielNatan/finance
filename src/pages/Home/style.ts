@@ -4,6 +4,8 @@ export const Container = styled.div`
     flex: 1;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 `
 
 export const HeaderStyle = styled.div`
@@ -95,6 +97,8 @@ export const Tab = styled.div<{ type: 'success' | 'error' }>`
 export const Main = styled.div`
     display: flex;
     gap: 20px;
+    flex: 1;
+    
 `
 export const ContainerCards = styled.div`
     display: flex;

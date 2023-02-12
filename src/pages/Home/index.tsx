@@ -28,6 +28,7 @@ export const Home = () => {
   return (
     <Container>
       <Header page='Dashboard'/>
+
       <HeaderStyle>
         <ContAvatar>
             <Avatar
@@ -45,6 +46,7 @@ export const Home = () => {
           <Tab type='error'><AiOutlineArrowUp size={12} color="red"/> U$ 2,014.00</Tab>
         </InputAndOutput>
       </HeaderStyle>
+
       <Main>
         <Left>
           <ContainerCards>
