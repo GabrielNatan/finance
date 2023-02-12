@@ -12,6 +12,13 @@ interface Customer {
   phoneNumber: string | null
   photoURL: string | null
   uid: string | null
+  jobTitle: string | null
+  streetAddress: string | null
+  countryRegion: string | null
+  apt: string | null
+  city: string | null
+  state: string | null
+  zipCode: string | null
 }
 
 const defaultCustomer: Customer = {
@@ -20,7 +27,14 @@ const defaultCustomer: Customer = {
   email: '',
   phoneNumber: '',
   photoURL: '',
-  uid: ''
+  uid: '',
+  jobTitle: '',
+  streetAddress: '',
+  countryRegion: '',
+  apt: '',
+  city: '',
+  state: '',
+  zipCode: ''
 }
 
 export const AuthContext = createContext(
@@ -51,7 +65,14 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
           email: user.email,
           phoneNumber: user.phoneNumber,
           photoURL: user.photoURL,
-          uid: user.uid
+          uid: user.uid,
+          jobTitle: '',
+          streetAddress: '',
+          countryRegion: '',
+          apt: '',
+          city: '',
+          state: '',
+          zipCode: ''
         }
         setUser(currentUser)
         setToken(true)
